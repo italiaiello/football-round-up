@@ -1,0 +1,507 @@
+h1 {
+    color: #F48E22;
+    width: 500px;
+    font-family: Futura;
+}
+
+p {
+    font-family: Futura;
+}
+
+h2, h3 {
+    font-family: "Zapfino";
+    color: #293FA6;
+}
+
+.App {
+    text-align: center;
+}
+
+.App-header {
+    text-align: center;
+    border-bottom: 5px solid #F48E22;
+    margin: 10px auto;
+    width: 70%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.App-header h1 {
+    margin: 0;
+}
+
+.App .App-header {
+    height: 100px;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+.select {
+    height: 32px;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+
+.select:hover {
+    transform: scale(1.03, 1.03);
+}
+
+.select:active {
+    transform: scale(0.97, 0.97);
+}
+
+/* Home Screen */
+
+#searchBar {
+    width: 200px;
+    height: 30px;
+    margin-bottom: 20px;
+}
+
+/* User Details on Home Screen */
+
+.userContainer {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 0 auto;
+    
+}
+
+.userContainer h1 {
+/*    font-weight: 1;*/
+    width: 180px;
+    margin: 0;
+    flex: 1;
+    margin-left: 160px;
+    color: #293FA6;
+    
+}
+
+.favTeam figure {
+    width: 80px;
+    height: auto;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+
+.favTeam p {
+    color: #293FA6;
+}
+
+.userContainer figure img {
+    width: 100%;
+    height: auto;
+    
+}
+
+.userContainer figure:hover {
+    transform: scale(1.05, 1.05);
+}
+
+.userContainer figure:active {
+    transform: scale(0.97, 0.97);
+}
+
+/* League Buttons on Home Screen */
+
+input {
+    outline: none;
+    border: 2px solid #293FA6;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: rgba(41, 63, 166, 0.4);
+    color: #293FA6;
+}
+
+.leagues-container {
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.leagueButton {
+    width: 20%;
+    height: 300px;
+    font-size: 0.9em;
+    margin: 7px;
+    background-color: #F48E22;
+    color: black;
+    border-radius: 5px;
+}
+
+.leagueButton figure {
+    margin: 30px auto;
+    width: 80%;
+    height: auto;
+}
+
+.leagueButton figure img {
+    width: 100%;
+    height: auto;
+}
+
+.leagueButton p {
+    width: 80%;
+    margin: 0 auto;
+    height: auto;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+/* League Standings */
+
+.standings-container h1 {
+    text-align: center;
+    height: auto;
+}
+
+.standings-container .footer {
+    margin-bottom: 0px;
+}
+
+.standings {
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 30px;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.standings h1 {
+    text-align: center;
+}
+
+.standings th {
+    text-align: center;
+    padding: 0;
+    background-color: #F48E22;
+    cursor: default;
+}
+
+.standings th:nth-child(2) {
+    width: 30%;
+}
+
+.standings td {
+    padding: 0;
+    text-align: center;
+    border-top: 1px solid lightgray;
+}
+
+.standings td:nth-child(2) {
+    text-align: left;
+}
+
+.standings tr:nth-child(even) {
+    background-color: #efefef;
+}
+
+.standings tr:hover {
+    background-color: #F48E22;
+    cursor: pointer;
+}
+
+.navButtons {
+    display: flex;
+    justify-content: center;
+}
+
+.navButtons button {
+    width: 120px;
+    height: 40px;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+    background-color: #19B34D;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    outline: none;
+}
+
+.navButtons button:hover {
+    transform: scale(1.05, 1.05);
+}
+
+.navButtons button:active {
+    transform: scale(0.95, 0.95);
+}
+
+
+/* Team Details Page */
+
+.teamDetails-container h1 {
+    margin: 0;
+}
+
+.teamDetails-container h2 {
+    text-align: center;
+    margin: 0;
+}
+
+.teamDetails-container button {
+    margin: 5px;
+    background-color: #19B34D;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    outline: none;
+}
+
+.teamHeader {
+    text-align: center;
+    background-color: #F48E22;
+    margin-top: 0px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.teamHeader button {
+    margin: 5px;
+    background-color: #19B34D;
+}
+
+.teamHeader-content {
+    width: 100%;
+    height: 30px;
+}
+
+.teamHeader-content h1 {
+    margin: 0 auto;
+}
+
+.details-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.details-container h3 {
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.details-container p {
+    width: 80%;
+    margin: 0 auto;
+    line-height: 20px;
+}
+
+.badge {
+    display: flex;
+    justify-content: center;
+}
+
+.players {
+    width: 50%;
+}
+
+.players th:nth-child(2) {
+    width: auto;
+}
+
+.players td:nth-child(2) {
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+}
+
+.footer {
+    margin-bottom: 0px;
+    width: 100%;
+    height: 70px;
+    background-color: #19B34D;
+}
+
+.footer div {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer div a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer div button {
+    height: 32px;
+    background-color: #444444;
+}
+
+.footer div a, .footer div button {
+    margin: 5px;
+}
+
+/* Team Website Button on Team Details Page */
+
+.teamWebsite {
+    height: 20px;
+    border-radius: 10%;
+}
+
+/* Player Details */
+
+.player-details {
+    width: 100%;
+    height: 100vh;
+}
+
+.player-details button {
+    margin: 5px;
+}
+
+
+.about-player {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.about-player div figure {
+    margin: 0;
+}
+
+.about-player div figure img {
+    border-radius: 15%;
+}
+
+.about-player div {
+    margin: 10px;
+}
+
+.player-info {
+    margin: 0;
+}
+
+.player-info h4 {
+    margin: 0;
+    color: white;
+}
+
+.player-info div {
+    margin: 0;
+}
+
+.player-info p {
+    text-align: center;
+    color: white;
+}
+
+.info-box {
+    background-color: rgb(41, 63, 166);
+    border-radius: 15%;
+    padding: 10px;
+}
+
+.DoB {
+    margin-bottom: 0;
+}
+
+.player-description {
+    margin: 0;
+}
+
+.player-description h3 {
+    margin: 0;
+}
+
+/* Forms */
+
+/* Dropdown Menus for Registration Form */
+
+select {
+    width: 95%;
+    outline: none;
+    margin-left: 8px;
+    
+}
+
+.form {
+    width: 50%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.form h3 {
+    width: 100px;
+    margin: 0 auto;
+    
+}
+
+fieldset {
+    width: 300px;
+    margin: 0 auto;
+    border: none;
+}
+
+legend {
+    margin: 0 auto;
+}
+
+.formField {
+    width: 95%;
+    margin: 10px auto;
+}
+
+.formField input {
+    width: 95%;
+}
+
+.formNav {
+    width: 65px;
+    margin: 0 auto;
+}
+
+.signin {
+    width: 50px;
+}
+
+.submitButton {
+    width: 60px;
+    margin: 0 auto;
+    margin-top: 10px;
+    transition: all .2s ease-in-out;
+}
+
+.submitButton:hover {
+    cursor: pointer;
+    transform: scale(1.05, 1.05);
+}
+
+.submitButton:active {
+    transform: scale(0.95, 0.95);
+}
+
+.registerButton {
+    width: 60px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.registerButton:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
