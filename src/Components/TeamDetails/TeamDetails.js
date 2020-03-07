@@ -1,11 +1,10 @@
 import React from 'react';
-import AllPlayers from '../Players/AllPlayers';
 import FacebookLogo from './Icons/facebook.svg';
 import TwitterLogo from './Icons/twitter.svg';
 import InstagramLogo from './Icons/instagram.svg';
 import YouTubeLogo from './Icons/youtube.svg';
 
-const TeamDetails = ({details, players, onPlayerSelect, onRouteChange}) => {
+const TeamDetails = ({details, onRouteChange}) => {
     
     if (details.strManager.length === 0) {
         details.strManager = 'Not available';
@@ -37,21 +36,14 @@ const TeamDetails = ({details, players, onPlayerSelect, onRouteChange}) => {
                     <h3>Description</h3>
                     <p>{details.strDescriptionEN}</p>
                 </div>
-                <h3>{`${details.strTeam}'s Roster`}</h3>
-                <AllPlayers players={players} onRouteChange={onRouteChange} onPlayerSelect={onPlayerSelect}/>
                 <br />
             </div>
             <div className="footer">
                 <div>
-                    
                     <a className="select" href={`http://${details.strFacebook}`} rel="noopener noreferrer" target="_blank"><img src={FacebookLogo} alt="Facebook Icon" /></a>
-                    
                     <a className="select" href={`http://${details.strTwitter}`} rel="noopener noreferrer" target="_blank"><img src={TwitterLogo} alt="Twitter Icon" /></a>
-                    
                     <a className="select" href={`http://${details.strInstagram}`} rel="noopener noreferrer" target="_blank"><img src={InstagramLogo} alt="Instagram Icon" /></a>
-                    
                     <a className="select" href={`http://${details.strYoutube}`} rel="noopener noreferrer" target="_blank"><img src={YouTubeLogo} alt="YouTube Icon" /></a>
-                    
                     <button className="teamWebsite select"><a href={`http://${details.strWebsite}`} rel="noopener noreferrer" target="_blank">View Team's Website</a></button>
                 </div>
             </div>

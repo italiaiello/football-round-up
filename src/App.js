@@ -3,7 +3,6 @@ import FavTeam from './Components/FavTeam/FavTeam';
 import Leagues from './Components/Leagues/Leagues';
 import Standings from './Components/Leagues/Standings';
 import TeamDetails from './Components/TeamDetails/TeamDetails';
-import Player from './Components/Players/Player';
 import SignInForm from './Components/SignInForm/SignInForm';
 import RegistrationForm from './Components/RegistrationForm/RegistrationForm';
 
@@ -16,8 +15,6 @@ const initialState = {
     leagueID: '',
     standings: [],
     details: [],
-    players: [],
-    playerIndex: 0,
     isPending: true,
     route: 'signin',
     user: {
@@ -87,7 +84,7 @@ class App extends Component {
         this.setState({isPending: true})
         
         if (leagueID.id === "4336" || leagueID.id === "4358" || leagueID.id === "4359") {
-            fetch(`https://www.thesportsdb.com/api/v1/json/1/lookuptable.php?l=${leagueID.id}&s=1718`)
+            fetch(`https://www.thesportsdb.com/api/v1/json/1/lookuptable.php?l=${leagueID.id}&s=1920`)
                 .then(response => response.json())
                 .then(data => {
                     this.setState({standings: data.table})
@@ -97,7 +94,7 @@ class App extends Component {
                 .catch(console.log)
             
         } else {
-            fetch(`https://www.thesportsdb.com/api/v1/json/1/lookuptable.php?l=${leagueID.id}&s=1819`)
+            fetch(`https://www.thesportsdb.com/api/v1/json/1/lookuptable.php?l=${leagueID.id}&s=1920`)
                 .then(response => response.json())
                 .then(data => {
                     this.setState({standings: data.table})
@@ -118,24 +115,9 @@ class App extends Component {
             .then(data => {
                 this.setState({details: data.teams[0]})
                 console.log(this.state.details)
-                this.displayAllPlayers(data.teams[0].strTeam)
-            })
-    }
-    
-    displayAllPlayers = (teamName) => {
-        fetch(`https://www.thesportsdb.com/api/v1/json/1/searchplayers.php?t=${teamName}`)
-            .then(response => response.json())
-            .then(data => {
-                this.setState({players: data.player})
+                this.onRouteChange('teamDetails')
                 this.setState({isPending: false})
-                this.onRouteChange('teamDetails');
-                
             })
-    }
-    
-    onPlayerSelect = (row) => {
-        this.setState({playerIndex: row.i})
-        this.onRouteChange('playerDetails');
     }
     
     onRouteChange = (route) => {
@@ -143,7 +125,7 @@ class App extends Component {
     }
     
   render() {
-      const {leagues, logoURL, leagueID, standings, details, players, playerIndex, isPending, route, user} = this.state;
+      const {leagues, logoURL, leagueID, standings, details, isPending, route, user} = this.state;
       
     return (
         
@@ -183,21 +165,16 @@ class App extends Component {
                       (
                         route === 'teamDetails'
                         ?
-                        <TeamDetails details={details} onRouteChange={this.onRouteChange} displayAllPlayers={this.displayAllPlayers} players={players} onPlayerSelect={this.onPlayerSelect} />
-                        :
+                        <TeamDetails details={details} onRouteChange={this.onRouteChange} />
+                        :   
                         (
-                            route === 'playerDetails'
+                            route === 'signin'
                             ?
-                            <Player players={players} playerIndex={playerIndex} onRouteChange={this.onRouteChange}/>
+                            <SignInForm onRouteChange={this.onRouteChange} loadUser={this.loadUser}/>
                             :
-                            (
-                                route === 'signin'
-                                ?
-                                <SignInForm onRouteChange={this.onRouteChange} loadUser={this.loadUser}/>
-                                :
-                                <RegistrationForm onRouteChange={this.onRouteChange} leagues={leagues} loadUser={this.loadUser}/>
-                            )
+                            <RegistrationForm onRouteChange={this.onRouteChange} leagues={leagues} loadUser={this.loadUser}/>
                         )
+                        
                       )
                       
                       
@@ -211,3 +188,9 @@ class App extends Component {
 }
 
 export default App;
+
+
+// route === 'playerDetails'
+// ?
+// <Player players={players} playerIndex={playerIndex} onRouteChange={this.onRouteChange}/>
+// :
