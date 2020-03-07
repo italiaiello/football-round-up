@@ -20,19 +20,19 @@ self.__precacheManifest = [
     "url": "/football-round-up/static/js/runtime~main.eab89a34.js"
   },
   {
-    "revision": "e707b83bf0cb7c4d0d44",
-    "url": "/football-round-up/static/js/main.0bcbd925.chunk.js"
+    "revision": "47007195595911b879b0",
+    "url": "/football-round-up/static/js/main.397b0f6a.chunk.js"
   },
   {
     "revision": "ccb4977e4d1e0c539eec",
     "url": "/football-round-up/static/js/2.783c090b.chunk.js"
   },
   {
-    "revision": "e707b83bf0cb7c4d0d44",
+    "revision": "47007195595911b879b0",
     "url": "/football-round-up/static/css/main.49adee26.chunk.css"
   },
   {
-    "revision": "cc77cf62c8f544a56da8dc4870e060b3",
+    "revision": "994c8783202941637a76df593df97517",
     "url": "/football-round-up/index.html"
   }
 ];
