@@ -60,7 +60,7 @@ class RegistrationForm extends Component {
     
     onSubmitSignIn = () => {
         console.log(this.state.favTeam)
-        fetch('http://localhost:3000/register', {
+        fetch('https://dry-tor-61029.herokuapp.com/register', {
           method: 'post',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
