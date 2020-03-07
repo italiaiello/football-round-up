@@ -1,17 +1,26 @@
 {
-  "main.css": "/football-round-up/static/css/main.49adee26.chunk.css",
-  "main.js": "/football-round-up/static/js/main.397b0f6a.chunk.js",
-  "main.js.map": "/football-round-up/static/js/main.397b0f6a.chunk.js.map",
-  "runtime~main.js": "/football-round-up/static/js/runtime~main.eab89a34.js",
-  "runtime~main.js.map": "/football-round-up/static/js/runtime~main.eab89a34.js.map",
-  "static/js/2.783c090b.chunk.js": "/football-round-up/static/js/2.783c090b.chunk.js",
-  "static/js/2.783c090b.chunk.js.map": "/football-round-up/static/js/2.783c090b.chunk.js.map",
-  "index.html": "/football-round-up/index.html",
-  "precache-manifest.59f32ae41313a719cc471f02eb244021.js": "/football-round-up/precache-manifest.59f32ae41313a719cc471f02eb244021.js",
-  "service-worker.js": "/football-round-up/service-worker.js",
-  "static/css/main.49adee26.chunk.css.map": "/football-round-up/static/css/main.49adee26.chunk.css.map",
-  "static/media/facebook.svg": "/football-round-up/static/media/facebook.d97f3fbb.svg",
-  "static/media/instagram.svg": "/football-round-up/static/media/instagram.55a728da.svg",
-  "static/media/twitter.svg": "/football-round-up/static/media/twitter.9297a711.svg",
-  "static/media/youtube.svg": "/football-round-up/static/media/youtube.c98995a2.svg"
+  "files": {
+    "main.css": "/football-round-up/static/css/main.5eb98872.chunk.css",
+    "main.js": "/football-round-up/static/js/main.37f4c508.chunk.js",
+    "main.js.map": "/football-round-up/static/js/main.37f4c508.chunk.js.map",
+    "runtime-main.js": "/football-round-up/static/js/runtime-main.526bcd46.js",
+    "runtime-main.js.map": "/football-round-up/static/js/runtime-main.526bcd46.js.map",
+    "static/js/2.aba60dda.chunk.js": "/football-round-up/static/js/2.aba60dda.chunk.js",
+    "static/js/2.aba60dda.chunk.js.map": "/football-round-up/static/js/2.aba60dda.chunk.js.map",
+    "index.html": "/football-round-up/index.html",
+    "precache-manifest.14f6b1e6144576940a0171d1b0e8d969.js": "/football-round-up/precache-manifest.14f6b1e6144576940a0171d1b0e8d969.js",
+    "service-worker.js": "/football-round-up/service-worker.js",
+    "static/css/main.5eb98872.chunk.css.map": "/football-round-up/static/css/main.5eb98872.chunk.css.map",
+    "static/js/2.aba60dda.chunk.js.LICENSE.txt": "/football-round-up/static/js/2.aba60dda.chunk.js.LICENSE.txt",
+    "static/media/facebook.svg": "/football-round-up/static/media/facebook.d97f3fbb.svg",
+    "static/media/instagram.svg": "/football-round-up/static/media/instagram.55a728da.svg",
+    "static/media/twitter.svg": "/football-round-up/static/media/twitter.9297a711.svg",
+    "static/media/youtube.svg": "/football-round-up/static/media/youtube.c98995a2.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.526bcd46.js",
+    "static/js/2.aba60dda.chunk.js",
+    "static/css/main.5eb98872.chunk.css",
+    "static/js/main.37f4c508.chunk.js"
+  ]
 }
