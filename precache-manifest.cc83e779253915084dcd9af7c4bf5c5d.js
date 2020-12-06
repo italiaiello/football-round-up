@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c8ca0becc82805ccda7fdad430eb1a7c",
+    "revision": "966e80db8e1036d9945b197033435d7d",
     "url": "/football-round-up/index.html"
   },
   {
-    "revision": "bfa2e06f91723af511ce",
-    "url": "/football-round-up/static/css/main.5eb98872.chunk.css"
+    "revision": "23cf85fb5b150c425baf",
+    "url": "/football-round-up/static/css/main.7c669521.chunk.css"
   },
   {
     "revision": "7b2d8f2537cc59916040",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/football-round-up/static/js/2.aba60dda.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "bfa2e06f91723af511ce",
-    "url": "/football-round-up/static/js/main.37f4c508.chunk.js"
+    "revision": "23cf85fb5b150c425baf",
+    "url": "/football-round-up/static/js/main.232346b3.chunk.js"
   },
   {
     "revision": "90447ab19c3eaea4d302",
