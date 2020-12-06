@@ -1,16 +1,21 @@
+body {
+    font-family: futura-pt, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+}
+
+
 h1 {
     color: #F48E22;
     width: 500px;
     font-family: Futura;
 }
 
-p {
-    font-family: Futura;
-}
 
 h2, h3 {
-    font-family: "Zapfino";
+    /* font-family: "Zapfino"; */
     color: #293FA6;
+    font-size: 2rem;
 }
 
 .App {
@@ -435,22 +440,29 @@ select {
 
 .form {
     width: 50%;
-    height: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
 }
 
 .form h3 {
-    width: 100px;
+    width: 50%;
     margin: 0 auto;
-    
+    color:  #E2B071;
+    text-align: center;
+    /* font-weight: 600; */
+}
+
+.form hr {
+    width: 50%;
+    margin: 30px auto;
 }
 
 fieldset {
-    width: 300px;
+    width: 90%;
     margin: 0 auto;
     border: none;
 }
@@ -464,24 +476,43 @@ legend {
     margin: 10px auto;
 }
 
-.formField input {
+.formField input, .dropdownWrapper {
     width: 95%;
+    padding: 15px;
+    background-color: #A7BDDF;
+    border: none;
+    color: black;
+    font-size: 1.2rem;
+}
+
+.dropdownWrapper {
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.formField input::placeholder {
+    color: white;
 }
 
 .formNav {
-    width: 65px;
+    width: 50%;
     margin: 0 auto;
 }
 
 .signin {
-    width: 50px;
+    width: 100%;
 }
 
 .submitButton {
-    width: 60px;
-    margin: 0 auto;
-    margin-top: 10px;
+    width: 100%;
+    padding: 20px 0;
     transition: all .2s ease-in-out;
+    background-color: #E2B071;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    outline: none;
 }
 
 .submitButton:hover {
@@ -503,5 +534,27 @@ legend {
 .registerButton:hover {
     text-decoration: underline;
     cursor: pointer;
+}
+
+/* .dropdownWrapper {
+    width: 550px;
+    height: 70px;
+    background-color: #C4DFE6;
+    color: #66A5AD;
+    border: none;
+    border-radius: 50px;
+    padding: 0 30px;
+    margin: 10px auto;
+    outline: none;
+    font-size: 20px;
+} */
+
+.dropdown {
+    width: 95%;
+    border: none;
+    outline:none;
+    background-color: transparent;
+    font-size: 1.2rem;
+    color: white;
 }
 

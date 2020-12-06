@@ -44,35 +44,29 @@ class SignInForm extends Component {
                <h3>Sign In</h3>
                <fieldset>
                 <div className="formField">
-                    <label htmlFor="email-address">Email</label>
                     <input
                       className="inputBox"
                       type="email"
                       name="email-address"
                       id="email-address"
+                      placeholder="Email"
                       onChange={this.onEmailChange}
                     />
                 </div>
                 <div className="formField">
-                    <label htmlFor="password">Password</label>
                     <input
                       className="inputBox"
                       type="password"
                       name="password"
                       id="password"
+                      placeholder="Password"
                       onChange={this.onPasswordChange}
                     />
                 </div>
                 </fieldset>
                 <div className="formNav">
-                    <div className="signin">
-                      <input
-                        onClick={this.onSubmitSignIn}
-                        className="submitButton"
-                        type="submit"
-                        value="Sign in"
-                      />
-                    </div>
+                    <button onClick={this.onSubmitSignIn} className="submitButton" type="submit">Sign In</button>
+                    <hr />
                     <div className="register">
                       <p  onClick={() => onRouteChange('register')} className="registerButton">Register</p>
                     </div>

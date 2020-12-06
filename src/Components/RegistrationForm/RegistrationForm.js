@@ -9,7 +9,8 @@ class RegistrationForm extends Component {
             signUpPassword: '',
             signUpName: '',
             teams: [],
-            favTeam: ''
+            favTeam: '',
+            currentFormStep: 1,
         }
     }
     
@@ -73,83 +74,108 @@ class RegistrationForm extends Component {
           .then(response => response.json())
           .then(data => {
             if (data.id) {
+                this.setState({currentFormStep: 1})
                 this.props.loadUser(data);
                 this.props.onRouteChange('home');
             }
         })
         .catch(err => console.log(err))
     }
+
+    
+
+    onNextStep = () => {
+      if (this.state.currentFormStep === 1) {
+        this.setState({currentFormStep: 2})
+      } else {
+        this.setState({ currentFormStep: 1 })
+      }
+
+    }
     
     
     render() {
         const { onRouteChange, leagues } = this.props;
-        const { teams } = this.state;
+        const { teams, currentFormStep } = this.state;
         
         return(
             <div className="form">
                <h3>Register</h3>
+                <p>{`Step ${this.state.currentFormStep} of 2`}</p>
                <fieldset>
-                <div className="formField">
-                    <label htmlFor="name">Name</label>
-                    <input
-                      className="inputBox"
-                      type="text"
-                      name="name"
-                      id="name"
-                      onChange={this.onNameChange}
-                    />
-                </div>
-                <div className="formField">
-                    <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
-                    <input
-                      className="inputBox"
-                      type="email"
-                      name="email-address"
-                      id="email-address"
-                      onChange={this.onEmailChange}
-                    />
-                </div>
-                <div className="formField">
-                    <label htmlFor="password">Password</label>
-                    <input
-                      className="inputBox"
-                      type="password"
-                      name="password"
-                      id="password"
-                      onChange={this.onPasswordChange}
-                    />
-                </div>
-                <select id="first-choice" onChange={this.onLeagueChange}>
-                  <option defaultValue="base">Select A League</option>
-                  {
-                      leagues.map((league, i) => {
-                        return(
-                            <option key={i} value={`${league.strLeague}`}>{`${league.strLeague}`}</option>
-                        )
-                    })
-                  }
-                </select>
-                <br />
-                <select id="second-choice" onChange={this.onTeamChange}>
-                  <option defaultValue="base">Select Your Favourite Team</option>
-                  {
-                       teams.map((team, i) => {
-                           return(
-                                <option key={i} value={`${team}`}>{`${team}`}</option>
-                           )
-                       }) 
-                  }
-                </select>
+                {
+                  currentFormStep === 1 ?
+                  <article className="regPart1">
+                    <div className="formField">
+                        <input
+                          className="inputBox"
+                          type="text"
+                          name="name"
+                          id="name"
+                          placeholder="Name"
+                          onChange={this.onNameChange}
+                        />
+                    </div>
+                    <div className="formField">
+                        <input
+                          className="inputBox"
+                          type="email"
+                          name="email-address"
+                          id="email-address"
+                          placeholder="Email"
+                          onChange={this.onEmailChange}
+                        />
+                    </div>
+                    <div className="formField">
+                        <input
+                          className="inputBox"
+                          type="password"
+                          name="password"
+                          id="password"
+                          placeholder="Password"
+                          onChange={this.onPasswordChange}
+                        />
+                    </div>
+                  </article>
+                  :
+                  <article className="regPart2 hide">
+                    <div className="dropdownWrapper">
+                      <select id="first-choice" className="dropdown" onChange={this.onLeagueChange}>
+                        <option defaultValue="base">Select A League</option>
+                        {
+                            leagues.map((league, i) => {
+                              return(
+                                  <option key={i} value={`${league.strLeague}`}>{`${league.strLeague}`}</option>
+                              )
+                          })
+                        }
+                      </select>
+                    </div>
+                    <br />
+                    <div className="dropdownWrapper">
+                      <select id="second-choice" className="dropdown" onChange={this.onTeamChange}>
+                        <option defaultValue="base">Select Your Favourite Team</option>
+                        {
+                            teams.map((team, i) => {
+                                return(
+                                      <option key={i} value={`${team}`}>{`${team}`}</option>
+                                )
+                            }) 
+                        }
+                      </select>
+                    </div>
+                  </article>
+                }
                 </fieldset>
                 <div className="formNav">
-                    <div className="signin">
-                      <input
-                        onClick={this.onSubmitSignIn}
-                        className="submitButton"
-                        type="submit"
-                        value="Register"
-                      />
-                    </div>
+                      {
+                        currentFormStep === 1 ?
+                        <button onClick={this.onNextStep} className="submitButton">Next Step</button>
+                        :
+                        <button onClick={this.onSubmitSignIn} className="submitButton" type="submit">Register</button>
+
+                      }
+                      <hr />
                     <div className="register">
                       <p  onClick={() => onRouteChange('signin')} className="registerButton">Sign In</p>
                     </div>
