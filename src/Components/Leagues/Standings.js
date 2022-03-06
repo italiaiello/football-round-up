@@ -31,17 +31,17 @@ const displayTable = ({standings, onRouteChange, displayTeamDetails}) => {
                     {
                         standings.map((standing, i) => {
 
-                            return (<tr key={i} onClick={() => displayTeamDetails({i})} >
+                            return (<tr key={i} onClick={() => displayTeamDetails(i)} >
                                         <td>{`${i+1}`}</td>
-                                        <td>{`${standing.name}`}</td>
-                                        <td>{standing.played}</td>
-                                        <td>{standing.win}</td>
-                                        <td>{standing.loss}</td>
-                                        <td>{standing.draw}</td>
-                                        <td>{standing.goalsfor}</td>
-                                        <td>{standing.goalsagainst}</td>
-                                        <td>{standing.goalsdifference}</td>
-                                        <td>{standing.total}</td>
+                                        <td>{`${standing.strTeam}`}</td>
+                                        <td>{standing.intPlayed}</td>
+                                        <td>{standing.intWin}</td>
+                                        <td>{standing.intLoss}</td>
+                                        <td>{standing.intDraw}</td>
+                                        <td>{standing.intGoalsFor}</td>
+                                        <td>{standing.intGoalsAgainst}</td>
+                                        <td>{standing.intGoalDifference}</td>
+                                        <td>{standing.intPoints}</td>
                                     </tr>)
                         })
                     }

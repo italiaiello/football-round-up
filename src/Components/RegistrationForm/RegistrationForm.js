@@ -41,7 +41,7 @@ class RegistrationForm extends Component {
             const leagueName = filteredLeagues[0].strLeague;
             let teamsInLeague = [];
 
-            fetch(`https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=${leagueName}`)
+            fetch(`https://www.thesportsdb.com/api/v1/json/50130162/search_all_teams.php?l=${leagueName}`)
                 .then(response => response.json())
                 .then(data => {
                     data.teams.map(team => teamsInLeague.push(team.strTeam))

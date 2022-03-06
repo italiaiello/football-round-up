@@ -14,7 +14,7 @@ class LeagueButton extends Component {
     }
     
     getLogo = (id) => {
-        fetch(`https://www.thesportsdb.com/api/v1/json/1/lookupleague.php?id=${id}`)
+        fetch(`https://www.thesportsdb.com/api/v1/json/50130162/lookupleague.php?id=${id}`)
             .then(response => response.json())
             .then(data => this.setState({logoURL: data.leagues[0].strBadge}))
     }

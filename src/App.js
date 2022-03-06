@@ -42,7 +42,7 @@ class App extends Component {
             favTeam: data.team
         }})
         
-        fetch(`https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=${data.team}`)
+        fetch(`https://www.thesportsdb.com/api/v1/json/50130162/searchteams.php?t=${data.team}`)
             .then(response => response.json())
             .then(data => {
                 this.setState({favTeamDetails: data.teams})
@@ -51,7 +51,7 @@ class App extends Component {
     }
     
     fetchLeagues = () => {
-        fetch('https://www.thesportsdb.com/api/v1/json/1/all_leagues.php')
+        fetch('https://www.thesportsdb.com/api/v1/json/50130162/all_leagues.php')
             .then(response => response.json())
             .then(data => {
                 console.log(data)
@@ -64,7 +64,7 @@ class App extends Component {
     onSearchChange = e => {
         this.setState({searchField: e.target.value})
         
-        fetch('https://www.thesportsdb.com/api/v1/json/1/all_leagues.php')
+        fetch('https://www.thesportsdb.com/api/v1/json/50130162/all_leagues.php')
             .then(response => response.json())
             .then(data => {
                 data.leagues.length = 22;
@@ -84,7 +84,7 @@ class App extends Component {
         this.setState({isPending: true})
         
         if (leagueID.id === "4336" || leagueID.id === "4358" || leagueID.id === "4359") {
-            fetch(`https://www.thesportsdb.com/api/v1/json/1/lookuptable.php?l=${leagueID.id}&s=1920`)
+            fetch(`https://www.thesportsdb.com/api/v1/json/50130162/lookuptable.php?l=${leagueID.id}&s=2019-2020`)
                 .then(response => response.json())
                 .then(data => {
                     this.setState({standings: data.table})
@@ -94,7 +94,7 @@ class App extends Component {
                 .catch(console.log)
             
         } else {
-            fetch(`https://www.thesportsdb.com/api/v1/json/1/lookuptable.php?l=${leagueID.id}&s=1920`)
+            fetch(`https://www.thesportsdb.com/api/v1/json/50130162/lookuptable.php?l=${leagueID.id}&s=2021-2022`)
                 .then(response => response.json())
                 .then(data => {
                     this.setState({standings: data.table})
@@ -109,8 +109,9 @@ class App extends Component {
     displayTeamDetails = (row) => {
         this.setState({isPending: true})
         const {standings} = this.state;
-        const team = standings[row.i].name;
-        fetch(`https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=${team}`)
+        console.log(row, standings)
+        const team = standings[row].strTeam;
+        fetch(`https://www.thesportsdb.com/api/v1/json/50130162/searchteams.php?t=${team}`)
             .then(response => response.json())
             .then(data => {
                 this.setState({details: data.teams[0]})
